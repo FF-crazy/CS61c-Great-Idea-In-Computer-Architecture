@@ -1,4 +1,7 @@
 {
   "C_Cpp.default.compilerPath": "/usr/bin/clang++",
-  "commentTranslate.source": "Google"
+  "commentTranslate.source": "Copilot",
+  "files.associations": {
+    "imageloader.h": "c"
+  }
 }
