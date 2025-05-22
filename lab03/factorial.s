@@ -1,7 +1,7 @@
 .globl factorial
 
 .data
-n: .word 8
+n: .word 3
 
 .text
 main:
@@ -21,4 +21,21 @@ main:
     ecall # Exit
 
 factorial:
-    # YOUR CODE HERE
+    beq a0, x0, fact_helper
+    addi sp, sp, -8
+    sw ra, 4(sp)
+    sw a0, 0(sp)
+    
+    addi a0, a0, -1
+    jal ra, factorial
+    
+    lw t0, 0(sp)
+    mul a0, a0, t0
+    
+    lw ra, 4(sp)
+    addi sp, sp, 8
+    jr ra
+
+fact_helper:
+    addi a0, x0, 1
+    jr ra
