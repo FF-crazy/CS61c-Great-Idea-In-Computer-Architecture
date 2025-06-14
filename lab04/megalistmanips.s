@@ -66,20 +66,31 @@ map:
     # are modified by the callees, even when we know the content inside the functions 
     # we call. this is to enforce the abstraction barrier of calling convention.
 mapLoop:
-    add t1, s0, x0      # load the address of the array of current node into t1
+    lw t1, 0(s0)      # load the address of the array of current node into t1
     lw t2, 4(s0)        # load the size of the node's array into t2
-
-    add t1, t1, t0      # offset the array address by the count
+    slli t3, t0, 2
+    add t1, t3, t1      # offset the array address by the count
     lw a0, 0(t1)        # load the value at that address into a0
+    
+    addi sp, sp, -12
+    sw t0, 0(sp)
+    sw t1, 4(sp)
+    sw t2, 8(sp)
 
     jalr s1             # call the function on that value.
+    
+    lw t0, 0(sp)
+    lw t1, 4(sp)
+    lw t2, 8(sp)
+    addi sp, sp, 12
 
     sw a0, 0(t1)        # store the returned value back into the array
     addi t0, t0, 1      # increment the count
     bne t0, t2, mapLoop # repeat if we haven't reached the array size yet
 
-    la a0, 8(s0)        # load the address of the next node into a0
-    lw a1, 0(s1)        # put the address of the function back into a1 to prepare for the recursion
+    lw t3, 8(s0)        # load the address of the next node into a0
+    addi a0, t3, 0
+    addi a1, s1, 0        # put the address of the function back into a1 to prepare for the recursion
 
     jal  map            # recurse
 done:
@@ -114,7 +125,7 @@ loop: #do...
     jal fillArray   # copy ints over to node->arr
 
     sw s2, 4(s4)    # node->size = size (4)
-    sw  s0, 8(s4)   # node-> next = previously created node
+    sw s0, 8(s4)   # node-> next = previously created node
 
     add s0, x0, s4  # last = node
     addi s1, s1, 1  # i++
@@ -126,7 +137,8 @@ loop: #do...
     addi sp, sp, 4
     jr ra
 
-fillArray: lw t0, 0(a1) #t0 gets array element
+fillArray: 
+    lw t0, 0(a1) #t0 gets array element
     sw t0, 0(a0) #node->arr gets array element
     lw t0, 4(a1)
     sw t0, 4(a0)
