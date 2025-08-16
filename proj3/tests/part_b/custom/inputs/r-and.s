@@ -1,0 +1,8 @@
+li x17, 0b10101010101010101010101010101010
+li x18, 0b01010101010101010101010101010101
+and t0, x18, x17
+and t1, x17, x18
+li x19, 0xffff
+and t2, zero, x19
+and s0, x19, x19
+and s1, zero, zero

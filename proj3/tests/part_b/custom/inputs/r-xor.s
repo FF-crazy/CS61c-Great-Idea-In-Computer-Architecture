@@ -1,0 +1,8 @@
+li x17, 0b10101010101010101010101010101010
+li x18, 0b01010101010101010101010101010101
+xor t0, x18, x17
+xor t1, x17, x18
+li x19, 0xffff
+xor t2, zero, x19
+xor s0, x19, x19
+xor s1, zero, zero
