@@ -1,8 +1,8 @@
-1.
-2.
+1.jki kji
+2.ijk jik
 
 --- lines below are ignored by the AG ---
 
-Checkoff Question 1:
-Checkoff Question 2:
-Checkoff Question 3:
+Checkoff Question 1:if jki, cache-friendly, the code with the most iterations i moves slowly , ensuring cache hitting in a block.
+Checkoff Question 2:if ijk, bad cache, k moves so fast.
+Checkoff Question 3:B can be put into a register, A and C in a cache block.

@@ -1,20 +1,20 @@
 --- not autograded ---
 
 Part 1
-    blocksize = 20, n = 100: 
-    blocksize = 20, n = 1000: 
-    blocksize = 20, n = 2000: 
-    blocksize = 20, n = 5000: 
-    blocksize = 20, n = 10000: 
+    blocksize = 20, n = 100: native: 0.006 blocking: 0.009
+    blocksize = 20, n = 1000: 0.654 0.7
+    blocksize = 20, n = 2000: 2.12 2.983
+    blocksize = 20, n = 5000: 65.12 22.323
+    blocksize = 20, n = 10000: 204.625 101.937
 
-    Checkoff Question 1:
-    Checkoff Question 2:
+    Checkoff Question 1:5000
+    Checkoff Question 2:big enough to all use of cache
 
 Part 2
-    blocksize = 50, n = 10000:
-    blocksize = 100, n = 10000:
-    blocksize = 500, n = 10000:
-    blocksize = 1000, n = 10000:
-    blocksize = 5000, n = 10000:
+    blocksize = 50, n = 10000: 73.404
+    blocksize = 100, n = 10000: 69.604
+    blocksize = 500, n = 10000: 72.628
+    blocksize = 1000, n = 10000: 73.634
+    blocksize = 5000, n = 10000: 229.944
 
-    Checkoff Question 3:
+    Checkoff Question 3: up then down. first cache block is too small to fit the matrix, causing too many read. last too big to almost the same with native one.

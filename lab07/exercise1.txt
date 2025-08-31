@@ -1,24 +1,25 @@
 Scenario 1
-    1.
-    2.
-    3.
+    1.Block Size and Step Size
+    2.Amazing 0!
+    3.Cache Size 32
 
 Scenario 2
-    1.
-    2.
-    3.
+    1.16
+    2.?
+    3.1
 
 Scenario 3
-    1.
-    2.
-    3.
-    4.
-    5.
+    1.0.5 0 0.33
+    2.32 16
+    3.16
+    4.Repeat Time
+    5.= = + =
 
 --- lines below are ignored by the AG ---
 
-Checkoff Question 1:
-Checkoff Question 2:
-Checkoff Question 3:
-Checkoff Question 4:
-Checkoff Question 5:
+Checkoff Question 1:Because they always be set into same block and every time it gets replaced.
+Checkoff Question 2:Or Step Size
+Checkoff Question 3:?
+Checkoff Question 4:Because it doesn't replace any memory any more, only reading from cache.
+Checkoff Question 5:Step Size should be along with cache block or less than it.
+Checkoff Question 6:The first time it only be replaced into L2, but not accessing it anymore. The second time we can read from L2 not memory.
