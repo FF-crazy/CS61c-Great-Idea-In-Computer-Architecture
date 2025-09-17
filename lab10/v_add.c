@@ -5,8 +5,9 @@
 
 int main() {
 	// Generate input vectors and destination vector
-	double *x = gen_array(ARRAY_SIZE);
-	double *y = gen_array(ARRAY_SIZE);
+    printf("hello");
+    double* x = gen_array(ARRAY_SIZE);
+    double *y = gen_array(ARRAY_SIZE);
 	double *z = (double*) malloc(ARRAY_SIZE*sizeof(double));
 
 	// Test framework that sweeps the number of threads and times each run

@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "omp_apps.h": "c",
+    "stdio.h": "c",
+    "stdlib.h": "c"
+  }
+}
