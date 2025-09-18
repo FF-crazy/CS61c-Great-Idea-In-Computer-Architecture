@@ -3,6 +3,7 @@
   "commentTranslate.source": "Copilot",
   "files.associations": {
     "imageloader.h": "c",
-    "x86intrin.h": "c"
+    "x86intrin.h": "c",
+    "matrix.h": "c"
   }
 }
